@@ -133,7 +133,7 @@ class HPPMergeFile:
 if __name__ == "__main__":
     # parameters
     if len(sys.argv) < 3 or (sys.argv[1].startswith('--') or sys.argv[2].startswith('--')):
-        print(f"usage: python3 {sys.argv[0]} ORIGIN_FILEPATH DEST_FILEPATH --default DEFAULT1 DEFAULT2 ... --ignore IGNORE1 IGNORE2 ...")
+        print(f"usage: python3 {sys.argv[0]} ORIGIN_PATH DEST_PATH --default DEFAULT1 DEFAULT2 ... --ignore IGNORE1 IGNORE2 ...")
         sys.exit(1)
     for arg in sys.argv[1:]:
         if arg.startswith('--') and arg not in [ '--default', '--ignore']:

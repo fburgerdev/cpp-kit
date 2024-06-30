@@ -9,9 +9,8 @@ Note: The output file with the resolved includes won't have any multi-line comme
 # Usage
 Execute the following command in your console.
 ```console
-python3 PATH_TO_REPO/hppmerge.py ORIGIN_FILE DEST_FILE DEFAULT_INCLUDE [IGNORE_INCLUDES...]
+python3 PATH_TO_REPO/hppmerge.py ORIGIN_PATH DEST_PATH --default DEFAULT1 DEFAULT2 ... --ignore IGNORE1 IGNORE2 ...
 ```
-where _ORIGIN_FILE_ is the path to the header file you want to resolve the includes in, _DEST_FILE_ is the output path of the scrupt, _DEFAULT_INCLUDE_ is the default directory of your C++ project and _IGNORE_INCLUDES_ are includes you don't want to be resolved.
 
 # Installation
 At your desired location, execute the following command in the console.
