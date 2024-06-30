@@ -162,10 +162,6 @@ if __name__ == "__main__":
                 break
             include_path = sys.argv[index] if sys.argv[index][-1] != '/' else sys.argv[index][:-1]
             ignore_includes.append(include_path)
-    print(origin_filepath)
-    print(dest_filepath)
-    print(default_includes)
-    print(ignore_includes)
 
     # hppmerge
     mergefile = HPPMergeFile(origin_filepath, default_includes, ignore_includes)
