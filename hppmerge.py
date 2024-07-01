@@ -29,7 +29,7 @@ def remove_comments(source: str) -> str:
             out += source[index]
             if source[index] == '"' and (index == 0 or source[index - 1] != '\\'):
                 in_string = not in_string
-            index += 1
+        index += 1
     return out
 # :: remove_empty_lines
 def remove_empty_lines(source: str) -> str:
