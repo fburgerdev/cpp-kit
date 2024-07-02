@@ -98,35 +98,37 @@ class HPPMergeFile:
                 continue
             if is_quote_include(line):
                 include_path = self.get_include_path(get_include(line), filepath)
+                print(include_path)
                 for ignored_include in self.ignore_includes:
                     if fnmatch(include_path, ignored_include):
                         if f'#include <{include_path}>' not in self.ignored_include_lines:
-                            self.ignored_include_lines.append(f'#include "{get_include(line)}"')
+                            self.ignored_include_lines.append(f'#include "{get_include(line)}"') # unused
                         break
                 else:
                     self.__parse(include_path)
+                    continue
             elif is_angle_include(line):
                 include_path = get_include(line)
                 if f'#include <{include_path}>' not in self.external_include_lines:
-                    self.external_include_lines.append(f'#include <{include_path}>')
-            else:
-                if first_line:
-                    self.lines.append(f'// #include "{path.basename(filepath)}" (HPPMERGE)')
-                    first_line = False
-                self.lines.append(line)
+                    self.external_include_lines.append(f'#include <{include_path}>') # unused
+            if first_line:
+                self.lines.append(f'// #include "{path.basename(filepath)}" (HPPMERGE)')
+                first_line = False
+            self.lines.append(line)
     # write
     def write(self, filepath: str) -> str:
         pathlib.Path(path.dirname(filepath)).mkdir(parents=True, exist_ok=True)
         with open(filepath, 'w') as file:
             file.write('#pragma once\n')
-            if len(self.external_include_lines):
-                file.write('// #include <...> (HPPMERGE)\n')
-                file.write('\n'.join(self.external_include_lines))
-                file.write('\n')
-            if len(self.ignored_include_lines):
-                file.write('// #include "..." (HPPMERGE)\n')
-                file.write('\n'.join(self.ignored_include_lines))
-                file.write('\n')
+            # no deferring
+            # if len(self.external_include_lines):
+            #     file.write('// #include <...> (HPPMERGE)\n')
+            #     file.write('\n'.join(self.external_include_lines))
+            #     file.write('\n')
+            # if len(self.ignored_include_lines):
+            #     file.write('// #include "..." (HPPMERGE)\n')
+            #     file.write('\n'.join(self.ignored_include_lines))
+            #     file.write('\n')
             file.write('\n'.join(self.lines))
 
 # main

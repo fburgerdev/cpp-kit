@@ -1,19 +1,16 @@
 #pragma once
-// #include <...> (HPPMERGE)
-#include <memory>
-#include <string>
-#include <string_view>
-#include <array>
-#include <vector>
-#include <stack>
-#include <queue>
-#include <unordered_set>
-#include <set>
-#include <unordered_map>
-#include <map>
-// #include "..." (HPPMERGE)
-#include "bot/minimax.hpp"
 // #include "common.hpp" (HPPMERGE)
+#include <memory> 
+#include <string> 
+#include <string_view> 
+#include <array> 
+#include <vector> 
+#include <stack> 
+#include <queue> 
+#include <unordered_set> 
+#include <set> 
+#include <unordered_map> 
+#include <map> 
 namespace Chessmate {
     using address = std::size_t;
     using int8 = std::int8_t;
@@ -187,3 +184,5 @@ namespace Chessmate {
     string doMove(int32 gameid, int32 playerid, string movestring);
     string getGameState(int32 gameid, int32 depth = 0);
 }
+// #include "chessmate.hpp" (HPPMERGE)
+#include "bot/minimax.hpp"
