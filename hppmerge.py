@@ -98,7 +98,6 @@ class HPPMergeFile:
                 continue
             if is_quote_include(line):
                 include_path = self.get_include_path(get_include(line), filepath)
-                print(include_path)
                 for ignored_include in self.ignore_includes:
                     if fnmatch(include_path, ignored_include):
                         if f'#include <{include_path}>' not in self.ignored_include_lines:
