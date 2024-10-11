@@ -1,11 +1,19 @@
 # C++ Kit
 This repo is a collection of C++ tools which I created myself to facilitate my C++ development process.
 ## Content
-- cpp-styleguide, based google's styleguide
-- hppmerge, to resolve includes in a header or source file
+- [cpp-styleguide](styleguide.md), based on personal preferences
+- [hppmerge](hppmerge/hppmerge.py), to resolve includes in a header or source file
 - build-scripts, using premake5
     - for [console-app](app.lua) development
     - for [library](lib.lua) development
+
+## C++ Styleguide
+This styleguide is based on personal preferences and is inspired by [google's styleguide](https://google.github.io/styleguide/cppguide.html).
+
+Currently featured contents are
+- naming conventions
+- comments
+- formatting
 
 ## HppMerge
 >Python script to resolve includes in a C++ header or source file
@@ -34,6 +42,7 @@ Use the following scripts
 It is recommended to put the respective script in a subdirectory, e.g. `/build`.
 ### Dependencies
 The script is processed by [premake5](https://premake.github.io).
+
 Additionally, you need
 - [make](https://www.gnu.org/software/make) for linux development
 - [visual studio](https://visualstudio.microsoft.com) for windows development
