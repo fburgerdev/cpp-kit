@@ -1,11 +1,11 @@
 # C++ Kit
-This repo is a collection of C++ tools which I created myself to facilitate my C++ developement process.
+This repo is a collection of C++ tools which I created myself to facilitate my C++ development process.
 ## Content
 - cpp-styleguide, based google's styleguide
 - hppmerge, to resolve includes in a header or source file
 - build-scripts, using premake5
-    - for [console-app](app.lua) developement
-    - for [library](lib.lua) developement
+    - for [console-app](app.lua) development
+    - for [library](lib.lua) development
 
 ## HppMerge
 >Python script to resolve includes in a C++ header or source file
@@ -28,15 +28,15 @@ python3 path/to/hppmerge.py ORIGIN DEST --default DEFAULT --ignore IGNORE
 
 ## Build Scripts
 Use the following scripts
-- for [console-app](app.lua) developement
-- for [library](lib.lua) developement
+- for [console-app](app.lua) development
+- for [library](lib.lua) development
 
 It is recommended to put the respective script in a subdirectory, e.g. `/build`.
 ### Dependencies
 The script is processed by [premake5](https://premake.github.io).
 Additionally, you need
-- [make](https://www.gnu.org/software/make) for linux developement
-- [visual studio](https://visualstudio.microsoft.com) for windows developement
+- [make](https://www.gnu.org/software/make) for linux development
+- [visual studio](https://visualstudio.microsoft.com) for windows development
 
 ### Usage
 Execute the following command in your console
